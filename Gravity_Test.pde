@@ -36,13 +36,14 @@ void Jump(){
   
 if(keyPressed && key==' ') canJump=true; 
 if(!underGravity && canJump  ){
-//Gravity decreases as distance from ground increases
+//Gravity decreases as distance from ground decreases
 upSpeed-=.5;
 w-=upSpeed;
 if((int)w<=75){underGravity=true;downSpeed=2;}
 }
 if(underGravity){
-//Gravity increases as distance from ground decreases
+//Gravity increases as distance from ground increases
+
 downSpeed+=.7;
 w+=downSpeed;
 if((int)w>=250 ){underGravity=false;canJump=false;upSpeed=17;}
